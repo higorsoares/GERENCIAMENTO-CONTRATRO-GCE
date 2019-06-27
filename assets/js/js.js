@@ -131,13 +131,13 @@ $('#formPesquisa').on('submit', function(e){
     var txtDataInicio = $("#txtDataInicio").val();
     var txtDataFim = $("#txtDataFim").val();
     $.ajax({
-    url: "t.php",
+    url: "retornoContratosApi.php",
     type: 'POST',
     data: {txtDataInicio:txtDataInicio,txtDataFim:txtDataFim},
     success: function(data) {
 
         var dataa = typeof data ==='string'? JSON.parse(data):data;
-        console.log(dataa[0].ctrCom);
+        console.log(data);
         console.log(txtDataInicio);
 
         $("#contConcluido").html(dataa[0].ctrCom);
