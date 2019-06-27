@@ -27,7 +27,7 @@ session_start();
 
 <body>
 
-
+(SELECT eqpt_numero_serie FROM equipamentos.equipamentos WHERE id_organizacao = '679c8260-6e95-4c50-b123-fabf503b8455' AND id_situacao = '757edcae-58d1-11e6-8f59-666537666131')
 
 	<nav class="navbar navbar-inverse">
 
@@ -44,7 +44,7 @@ session_start();
 				<?php  if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])):?>
 				    <li><a href="produtos.php">Estoque</a></li>
                     <li><a href="contratoCadastro.php">Novo Contrato</a></li>
-					<li><a href="teste.php">Meus Contratos</a></li>
+					<li><a href="meusContratos.php">Meus Contratos</a></li>
 					
 
 					<!--<li><a href="meusContratos.php">Meus Contratos</a></li>-->

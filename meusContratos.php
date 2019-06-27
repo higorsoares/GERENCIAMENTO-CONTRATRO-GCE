@@ -1,129 +1,75 @@
-<?php 
-
+<?php
 require 'pages/header.php';
+require 'classes/produtos.class.php';
 
-require 'classes/categoria.class.php';
-
-require 'classes/contrato.class.php';
-
-$categorias = new Categoria();
-
-$contract = new Contrato();
-
+$produto = new Produtos();
 
 
 ?>
+<div class="container">
+	<div class="row">
+		<nav aria-label="breadcrumb">
+		   <ol class="breadcrumb">
+		   		<li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
+		    	<li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
+		    	<li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
+		   </ol>
+		</nav>
+	</div>
+	
+	
+	<h1>Cadastrar  Novo Produto</h1>
 
+	<div class="row">
+				<form method="POST" id="formCadastroProduto">
+						<div class="form-group col-md-8">
 
+						<label for="txtDescricaoProduto">Nome Do produto :</label>
 
-	<div class="container">
+						<input type="txt" class="form-control" id="txtDescricaoProduto" name="txtDescricaoProduto">
+					</div>		
+					<div class="form-group col-md-2">
 
-		<div class="row">
-
-			<form method="POST">
-
-				<div class="row">
-
-					<div class="form-group col-md-5">
-
-						<input type="submit" value='Pesquisar' class="btn btn-default">
-
+						<input type="submit" value='Cadastrar' class="btn btn-primary btnn">
 					</div>
-
-				</div>
-
-				
-
-
-
-
-
-			</form>
+								
+				</form>
 
 		</div>
 
 
 
-		<div class="row">
 
-			  <table class="table table-hover">
+	<div class="row">
+			  <table class="table table-hover" width="100%" id="tbProdutos">
 
 				   		 <thead>
-
 						      <tr>
-
-						        <th>Razao Social</th>
-
-						        <th>Responsavel</th>
-
-						        <th>Telefone</th>
-
-						        <th>Situação do contrato</th>
-
-						        <th>Data de cadastro</th>
-
-						        <th>Ações</th>
-
+						        <th>Nome do Produto</th>
+						        <th>Data Cadastro</th>
+						        <th>Usuário Cadastro</th>
+						        <th>ações</th>
 						      </tr>
-
 				   		 </thead>
-
 				    <tbody>
 
-				    	<?php
-
-				    	$ret = $contract->getALL();
-
-				    	
-
-
-
-				    		foreach ($ret as $item ) :
-
-
-
-				    		
-
-				    	?>
-
-				      <tr>
-
-				        <td><?php echo $item['razao_social'];?></td>
-
-				        <td><?php echo $item['nome_responsavel'];?></td>
-
-				        <td><?php echo $item['telefone_contato'];?></td>
-
-				        <td><?php echo utf8_encode($item['descricao']);?></td>
-
-				        <td><?php echo $item['dh_cadastro'];?></td>
-
-				        <td>
-
-				        	<a class="btn btn-info" href="editarContrato.php?id=<?php echo $item['id_emp']?>">Alterar Situação</a>
-
-				        	<a class="btn btn-danger" href="editar.php?id=<?php echo $item['id_emp']?>">Cancelar</a>
-
-				        </td>
-
-				      </tr>
-
-				  <?php endforeach;?>
 
 				    </tbody>
-
                   </table>
 
-		</div>		
-
-	</div>
-
+		</div>	
+</div>
 
 
 
-
-
+<?php
+	if(!empty($_POST['txtDescricaoProduto'])){
+		$txtDescricaoProduto = addslashes($_POST['txtDescricaoProduto']);
+		$produto->addProdutos($txtDescricaoProduto);
+	}
+?>
 
 
 
 <?php require 'pages/footer.php';?>
+
