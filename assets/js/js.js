@@ -234,3 +234,18 @@ $('#formPesquisa').on('submit', function(e){
 
   });
 
+
+ $(document).on("change", "#FormCadastroContrato #txtValorMensal", function(){
+
+ var ValorTotal = $("#valor").val();
+    var ValorPago  = $("#txtValorMensal").val();
+
+    var Result = ValorTotal - ValorPago;
+
+    $("#txtRestante").val(Result);
+
+
+    console.log("Teste");
+
+
+ });

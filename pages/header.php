@@ -27,7 +27,7 @@ session_start();
 
 <body>
 
-(SELECT eqpt_numero_serie FROM equipamentos.equipamentos WHERE id_organizacao = '679c8260-6e95-4c50-b123-fabf503b8455' AND id_situacao = '757edcae-58d1-11e6-8f59-666537666131')
+
 
 	<nav class="navbar navbar-inverse">
 

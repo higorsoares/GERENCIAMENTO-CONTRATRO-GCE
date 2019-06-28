@@ -12,13 +12,18 @@ $quantidade = new Quantidade();
 <div class="container">
 	<nav aria-label="breadcrumb">
 	   <ol class="breadcrumb">
+	   	
 	   	  <li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
-		    	<li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
-		    	<li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
+		  <li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
+		
+		  <li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
 	   </ol>
 	</nav>
 	<h1>Quantidade Em Estoque</h1>
 	<div class="row">
+		<?php 
+	   		if($_SESSION['cLogin'] != 5):
+	   	?>
 				<form method="POST" id="formCadastroQuantidade">
 					<div class="form-group col-md-3">
 					<label for="txtProdudo">Produto</label>
@@ -45,7 +50,7 @@ $quantidade = new Quantidade();
 						<input type="submit" value='Cadastrar' class="btn btn-primary btnn">
 					</div>		
 				</form>
-
+          <?php endif;?>
 		</div>
 
 
@@ -59,7 +64,10 @@ $quantidade = new Quantidade();
 						        <th>Quantidade</th>
 						         <th>Valor</th>
 						        <th>Usuário Cadastro</th>
+						        
 						        <th>ações</th>
+
+						         
 						      </tr>
 				   		 </thead>
 				    <tbody>

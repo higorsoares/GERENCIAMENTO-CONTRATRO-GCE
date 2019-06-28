@@ -11,7 +11,7 @@ $contrato = new Contrato();
 
 	<div class="container">
 		<h1>Novo Contrato</h1>
-		<form method="POST">
+		<form method="POST" id="FormCadastroContrato">
 			<div class="row">
 				<div class="form-group col-md-7">
 					<label for="nome">Razão social:</label>
@@ -81,7 +81,7 @@ $contrato = new Contrato();
 			</div>
 
 			<div class="row">
-				<div class="form-group col-md-5">
+				<div class="form-group col-md-3">
 					<label for="senha">Tipo de contrato:</label>
 					<select class="form-control" name="tipoCont">
 						<option>Selecione</option>
@@ -109,12 +109,16 @@ $contrato = new Contrato();
 				
 				</div>
 				<div class="form-group col-md-2">
-					<label for="valor">Valor start:</label>
+					<label for="valor">Valor do contrato:</label>
 					<input type="text" name="valor" id="valor" class="form-control" placeholder="Valor Inicial">
 				</div>
 				<div class="form-group col-md-2">
-					<label for="txtValorMensal">Valor mensal:</label>
+					<label for="txtValorMensal">Valor Pago:</label>
 					<input type="text" name="txtValorMensal" id="txtValorMensal" class="form-control" placeholder="Valor Mensal">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="txtRestante">Restante:</label>
+					<input type="text" name="txtRestante" id="txtRestante" class="form-control" placeholder="Valor Mensal">
 				</div>
 			</div>
 			
