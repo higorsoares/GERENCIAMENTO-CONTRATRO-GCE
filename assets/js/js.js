@@ -1,58 +1,4 @@
-/*
-
 $("document").ready( function() {
-
-
-$('#formCategoria').on('submit', function(e){
-    e.preventDefault();
-
-       var txtCategoria = $('#txtCategoria').val();
-        
-          $('#table').DataTable( {
-                    "responsive": true,
-                    "scrollY": "300px",
-                    "scrollCollapse": true,
-                    "destroy": true,
-                ajax: {
-                   
-                    type: 'POST',
-                    data:{txtCategoria:txtCategoria},
-                    url: 'testeClass.php',
-                    dataSrc: '',
-
-                },
-                columns: [ 
-
-                      
-                    
-                          {data: 'razao_social'},
-                          {data: 'nome_responsavel'},
-                          {data: 'telefone_contato'},
-                          {data: 'descricao'},
-                          {data: 'dh_cadastro'},
-                          {
-                      "render": function (data, type, row) {
-                          return "<a href='editarContrato.php?id=" + row.id_emp + "' class='btn btn-primary'>Visualizar Contrato</a>"
-                      }},
-
-                          
-
-
-                 ]
-            } );
-
-    });
-
-});
-
-
-
-*/
-
-
-$("document").ready( function() {
-
-
 $('#formCategoria').on('submit', function(e){
     e.preventDefault();
 
@@ -102,7 +48,6 @@ $('#formCategoria').on('submit', function(e){
 
 });
 
-//setInterval(function(){
 $.ajax({
     url: "Api/retorno.php",
     type: 'POST',
@@ -120,9 +65,6 @@ $.ajax({
     }
 });
 
-
-
-//},5000)
 
 
 $('#formPesquisa').on('submit', function(e){
