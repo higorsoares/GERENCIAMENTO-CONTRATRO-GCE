@@ -1,75 +1,116 @@
-<?php
-require 'pages/header.php';
-require 'classes/produtos.class.php';
+<?php 
 
-$produto = new Produtos();
+require 'pages/header.php';
+
+require 'classes/categoria.class.php';
+require 'classes/situacao.class.php';
+
+require 'classes/contrato.class.php';
+
+$categorias = new Categoria();
+
+$situacao = new Situacao();
+
+$contract = new Contrato();
+
 
 
 ?>
-<div class="container">
-	<div class="row">
-		<nav aria-label="breadcrumb">
-		   <ol class="breadcrumb">
-		   		<li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
-		    	<li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
-		    	<li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
-		   </ol>
-		</nav>
-	</div>
-	
-	
-	<h1>Cadastrar  Novo Produto</h1>
 
-	<div class="row">
-				<form method="POST" id="formCadastroProduto">
-						<div class="form-group col-md-8">
 
-						<label for="txtDescricaoProduto">Nome Do produto :</label>
 
-						<input type="txt" class="form-control" id="txtDescricaoProduto" name="txtDescricaoProduto">
-					</div>		
+	<div class="container">
+
+		<div class="row">
+
+			<form method="POST" id="formCategoria">
+				<div class="row">
+
+					<div class="form-group col-md-5">
+
+						<label for="txtCategoria">Tipo de contrato:</label>
+
+						<select class="form-control" name="txtCategoria" id="txtCategoria">
+
+							<option>Selecione</option>
+
+								<?php 
+
+									$cat = $categorias->getCategoria();
+
+									foreach ($cat as $item):
+
+								?>
+
+							 <option value="<?php echo  $item['id']; ?>"><?php echo utf8_encode($item['descricao_cat']) ;?></option>
+
+								<?php endforeach;?>
+
+						</select>
+
+					</div>
+
+					
+
+
+					
 					<div class="form-group col-md-2">
 
-						<input type="submit" value='Cadastrar' class="btn btn-primary btnn">
+						<input type="submit" value='Pesquisar' class="btn btn-primary btnn">
 					</div>
-								
-				</form>
+
+				</div>
+
+				<div class="row">
+
+					
+
+				</div>
+			</form>
 
 		</div>
 
 
 
+		<div class="row">
 
-	<div class="row">
-			  <table class="table table-hover" width="100%" id="tbProdutos">
+			  <table class="table table-hover" width="100%" id="table">
 
 				   		 <thead>
+
 						      <tr>
-						        <th>Nome do Produto</th>
-						        <th>Data Cadastro</th>
-						        <th>Usuário Cadastro</th>
-						        <th>ações</th>
+
+						        <th>Razao Social</th>
+
+						        <th>Responsavel</th>
+
+						        <th>Telefone</th>
+
+						        <th>Situação do contrato</th>
+
+						        <th>Data de cadastro</th>
+						        <th>acoes</th>
+
+						        
+
 						      </tr>
+
 				   		 </thead>
+
 				    <tbody>
 
 
 				    </tbody>
+
                   </table>
 
-		</div>	
-</div>
+		</div>		
+
+	</div>
 
 
 
-<?php
-	if(!empty($_POST['txtDescricaoProduto'])){
-		$txtDescricaoProduto = addslashes($_POST['txtDescricaoProduto']);
-		$produto->addProdutos($txtDescricaoProduto);
-	}
-?>
 
 
 
 <?php require 'pages/footer.php';?>
-

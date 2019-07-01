@@ -44,9 +44,12 @@
 		 $bairro,
 		 $rua,
 		 $numero,
-		 $valor_mensal){
+		 $valor_mensal,
+		 $txtRestante,
+		 $txtDataPagamento,
+		 $txtObservacao){
 
-        $sql = "INSERT INTO empresas SET razao_social = :razao_social, cnpj = :cnpj ,nome_responsavel = :nome_responsavel, telefone_contato = :telefone_contato, valor = :valor , id_categoria = :id_categoria, id_situacao = :id_situacao, id_user = :id_user, email = :email, telefone_contato2 = :telefone_contato2, estado = :estado, cidade = :cidade, bairro = :bairro , rua = :rua , numero = :numero , valor_mensal = :valor_mensal";
+        $sql = "INSERT INTO empresas SET razao_social = :razao_social, cnpj = :cnpj ,nome_responsavel = :nome_responsavel, telefone_contato = :telefone_contato, valor = :valor , id_categoria = :id_categoria, id_situacao = :id_situacao, id_user = :id_user, email = :email, telefone_contato2 = :telefone_contato2, estado = :estado, cidade = :cidade, bairro = :bairro , rua = :rua , numero = :numero , valor_mensal = :valor_mensal, valor_restante = :valor_restante, dh_pagamento = :dh_pagamento , observacao = :observacao";
 
 			$sql = $this->pdo->prepare($sql);
 
@@ -74,6 +77,9 @@
 			$sql->bindValue(':rua',$rua);
 			$sql->bindValue(':numero',$numero);
 			$sql->bindValue(':valor_mensal',$valor_mensal);
+			$sql->bindValue(':valor_restante',$txtRestante);
+			$sql->bindValue(':dh_pagamento',$txtDataPagamento);
+			$sql->bindValue(':observacao',$txtObservacao);
 
 			$sql->execute();
 
@@ -103,11 +109,15 @@
 					 $bairro,
 					 $rua,
 					 $numero,
-					 $valor_mensal){
+					 $valor_mensal,
+					 $txtRestante,
+					 $txtDataPagamento,
+					 $txtObservacao
+					){
 
 
 
-			$sql = "UPDATE empresas SET razao_social = :razao_social, cnpj = :cnpj ,nome_responsavel = :nome_responsavel, telefone_contato = :telefone_contato, valor = :valor , id_categoria = :id_categoria, id_situacao = :id_situacao , email = :email, telefone_contato2 = :telefone_contato2, estado = :estado, cidade = :cidade, bairro = :bairro , rua = :rua , numero = :numero , valor_mensal = :valor_mensal WHERE id = :id";
+			$sql = "UPDATE empresas SET razao_social = :razao_social, cnpj = :cnpj ,nome_responsavel = :nome_responsavel, telefone_contato = :telefone_contato, valor = :valor , id_categoria = :id_categoria, id_situacao = :id_situacao , email = :email, telefone_contato2 = :telefone_contato2, estado = :estado, cidade = :cidade, bairro = :bairro , rua = :rua , numero = :numero , valor_mensal = :valor_mensal,  valor_restante =:valor_restante, dh_pagamento = :dh_pagamento , observacao = :observacao WHERE id = :id";
 
 			$sql = $this->pdo->prepare($sql);
 
@@ -136,6 +146,9 @@
 			$sql->bindValue(':rua',$rua);
 			$sql->bindValue(':numero',$numero);
 			$sql->bindValue(':valor_mensal',$valor_mensal);
+			$sql->bindValue(':valor_restante',$txtRestante);
+			$sql->bindValue(':dh_pagamento',$txtDataPagamento);
+			$sql->bindValue(':observacao',$txtObservacao);
 
 			$sql->execute();
 
@@ -253,7 +266,7 @@
 
 		public function getId2($id){
 
-			$sql = "SELECT emp.id as id_emp, sit.id as id_sit , cat.id as id_cat , emp.razao_social, emp.cnpj, emp.nome_responsavel,emp.telefone_contato, emp.telefone_contato2 , emp.estado, emp.cidade, emp.bairro, emp.rua, emp.numero,cat.descricao_cat, sit.descricao, emp.valor, emp.valor_mensal, emp.email FROM empresas as emp 
+			$sql = "SELECT emp.id as id_emp, sit.id as id_sit , cat.id as id_cat , emp.razao_social, emp.cnpj, emp.nome_responsavel,emp.telefone_contato, emp.telefone_contato2 , emp.estado, emp.cidade, emp.bairro, emp.rua, emp.numero,cat.descricao_cat, sit.descricao, emp.valor, emp.valor_mensal, emp.email, emp.valor_restante, emp.dh_pagamento, emp.observacao FROM empresas as emp 
 
 			inner join situacoes as sit on emp.id_situacao = sit.id
 

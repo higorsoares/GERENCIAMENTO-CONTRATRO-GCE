@@ -27,6 +27,7 @@ if(!empty($_GET['id'])){
 	
 
 	$ret = $contract->getId2($id);
+	
 
 
 
@@ -37,27 +38,6 @@ if(!empty($_GET['id'])){
 
 
 ?>
-
-Prezado Cliente,										
-										
-Recebemos em nossa central o Acionamento de um ALERTA identificado abaixo, efetuamos varias tentativas de contato em todos os telefones cadastrados, porem sem sucesso de contato com cliente/associado, devido ha isso tomamos as seguintes medidas:	
-	
-											
-TIPO DE ALERTA:
-PLACA:      {{PLACA}} 
-CLIENTE/ASSOCIADO:     {{CLIENTE}}
-MODELO DO VEICULO:    {{MODELO}}
-LOCALIZAÇÃO:      {{LOCAL}}
-RECADO NA CAIXA DE MSG CEL:										
-ENVIO DE WHATSAPP: (   ) sim /  (   ) não	
-										
-Gostaríamos de saber se vocês possuem algum outro contato do cliente que não esteja em seu cadastro?
-
-PROTOCOLOS DE LIGAÇOES EFETUADAS:
-
-
-										
-Finalizando, colocamo-nos à disposição para prestar quaisquer esclarecimentos adicionais julgados necessários. 
 
 <div class="container">
 
@@ -163,7 +143,7 @@ Finalizando, colocamo-nos à disposição para prestar quaisquer esclarecimentos
 
 			<div class="row">
 
-				<div class="form-group col-md-5">
+				<div class="form-group col-md-2">
 
 					<label for="senha">Tipo de contrato:</label>
 
@@ -187,7 +167,7 @@ Finalizando, colocamo-nos à disposição para prestar quaisquer esclarecimentos
 
 				</div>
 
-				<div class="form-group col-md-3">
+				<div class="form-group col-md-2">
 
 					<label for="telefone">Situação do contrato:</label>
 
@@ -228,14 +208,26 @@ Finalizando, colocamo-nos à disposição para prestar quaisquer esclarecimentos
 					<label for="txtValorMensal">Valor mensal:</label>
 					<input type="text" name="txtValorMensal" value="<?php echo $ret['valor_mensal']?>" id="txtValorMensal" class="form-control" placeholder="Valor Mensal">
 				</div>
-
+				<div class="form-group col-md-2">
+					<label for="txtRestante">Restante:</label>
+					<input type="text" name="txtRestante" value="<?php echo $ret['valor_restante']?>" id="txtRestante" class="form-control" placeholder="Valor Mensal">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="txtDataPagamento">Data Pg</label>
+					<input type="date" name="txtDataPagamento" value="<?php echo $ret['dh_pagamento']?>" id="txtDataPagamento" class="form-control" placeholder="Data Pagamento">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="txtObservacao">Obeservação</label>
+					<textarea id="txtObservacao" name="txtObservacao"  value="" class="md-textarea form-control" rows="3"><?php echo $ret['observacao']?></textarea>
+				</div>
 			</div>
 
 			
+<!--<input type="submit" value='Cadastrar' class="btn btn-primary">-->
 
-			
-
-			<input type="submit" value='Atualizar informações' class="btn btn-primary">
+			<button type="submit" class="btn btn-primary"><i class="fas fa-edit"> Editar Informações </i></button>
 
 		</form>
 

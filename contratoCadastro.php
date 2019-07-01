@@ -81,7 +81,7 @@ $contrato = new Contrato();
 			</div>
 
 			<div class="row">
-				<div class="form-group col-md-3">
+				<div class="form-group col-md-2">
 					<label for="senha">Tipo de contrato:</label>
 					<select class="form-control" name="tipoCont">
 						<option>Selecione</option>
@@ -93,7 +93,7 @@ $contrato = new Contrato();
 						<?php endforeach;?>
 					</select>
 				</div>
-				<div class="form-group col-md-3">
+				<div class="form-group col-md-2">
 					<label for="situacao">Situação do contrato:</label>
 					
 					<select class="form-control" name="situacoes">
@@ -120,10 +120,22 @@ $contrato = new Contrato();
 					<label for="txtRestante">Restante:</label>
 					<input type="text" name="txtRestante" id="txtRestante" class="form-control" placeholder="Valor Mensal">
 				</div>
+				<div class="form-group col-md-2">
+					<label for="txtDataPagamento">Data Pg</label>
+					<input type="date" name="txtDataPagamento" id="txtDataPagamento" class="form-control" placeholder="Data Pagamento">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="txtObservacao">Obeservação</label>
+					<textarea id="txtObservacao" name="txtObservacao" class="md-textarea form-control" rows="3"></textarea>
+				</div>
 			</div>
 			
 			
-			<input type="submit" value='Cadastrar' class="btn btn-primary">
+			<!--<input type="submit" value='Cadastrar' class="btn btn-primary">-->
+
+			<button type="submit" class="btn btn-primary"><i class="fa fa-id-card"> Cadastrar </i></button>
 		</form>
 		
 	</div>
@@ -145,6 +157,10 @@ $contrato = new Contrato();
 				$rua = addslashes($_POST['txtRua']);
 				$numero = addslashes($_POST['txtNumero']);
 				$valor_mensal = addslashes($_POST['txtValorMensal']);
+				$txtRestante = addslashes($_POST['txtRestante']);
+				$txtDataPagamento = addslashes($_POST['txtDataPagamento']);
+				$txtObservacao = addslashes($_POST['txtObservacao']);
+
 
 				$contrato->cadastroContrato(
 					$razao,
@@ -161,7 +177,10 @@ $contrato = new Contrato();
 					$bairro,
 					$rua,
 					$numero,
-					$valor_mensal
+					$valor_mensal,
+					$txtRestante,
+					$txtDataPagamento,
+					$txtObservacao
 				);
 
 				         ?>

@@ -20,6 +20,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="assets/datatable/datatables.min.css"/>
 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+	<link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
 	
 
