@@ -27,6 +27,9 @@ if(!empty($_POST['razao']) && !empty($_POST['cnpj']) && !empty($_POST['Responsav
 				$rua = addslashes($_POST['txtRua']);
 				$numero = addslashes($_POST['txtNumero']);
 				$valor_mensal = addslashes($_POST['txtValorMensal']);
+				$txtRestante = addslashes($_POST['txtRestante']);
+				$txtDataPagamento = addslashes($_POST['txtDataPagamento']);
+				$txtObservacao = addslashes($_POST['txtObservacao']);
 
 
 
@@ -46,12 +49,15 @@ if(!empty($_POST['razao']) && !empty($_POST['cnpj']) && !empty($_POST['Responsav
 					$bairro,
 					$rua,
 					$numero,
-					$valor_mensal 
+					$valor_mensal,
+					$txtRestante,
+					$txtDataPagamento,
+					$txtObservacao 
 				);
 				
 
 				//echo $razao.$telefone."---".$sit.$email.$id;
-				header("Location: teste.php ");
+				header("Location: meusContratos.php ");
 
 
 			}else{

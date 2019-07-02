@@ -382,6 +382,21 @@
 
 		}
 
+		public function agenda(){
+			$dat = date('Y/m/d');
+			$sql = "SELECT * FROM empresas WHERE dh_pagamento = :dh_pagamento";
+			$sql = $this->pdo->prepare($sql);
+			$sql->bindValue(':dh_pagamento',$dat);
+			$sql->execute();
+
+			if($sql->rowCount() > 0){
+				$dado = $sql->fetchAll();
+				return $dado;
+
+			}
+
+		}
+
 
 
 

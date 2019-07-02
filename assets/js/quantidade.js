@@ -25,7 +25,7 @@ $('#tbQuantidade').DataTable( {
                           {data: 'nome'},
                           {
                       "render": function (data, type, row) {
-                          return "<a href='editarQuantidade.php?id=" + row.idQtd + "' class='btn btn-primary'>Alterar Quantidade</a>"
+                          return "<a href='editarQuantidade.php?id=" + row.idQtd + "' class='btn btn-primary'> <i class='fas fa-edit'> Alterar Quantidade </i></a>"
                       }},
 
                           

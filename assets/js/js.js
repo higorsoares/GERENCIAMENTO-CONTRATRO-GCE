@@ -35,7 +35,7 @@ $('#formCategoria').on('submit', function(e){
                           {data: 'dh_cadastro'},
                           {
                       "render": function (data, type, row) {
-                          return "<a href='editarContrato.php?id=" + row.id_emp + "' class='btn btn-primary'>Visualizar Contrato</a>"
+                          return "<a href='editarContrato.php?id=" + row.id_emp + "' class='btn btn-primary'><i class='fas fa-edit'> Visualizar Contrato </i></a>"
                       }},
 
                           

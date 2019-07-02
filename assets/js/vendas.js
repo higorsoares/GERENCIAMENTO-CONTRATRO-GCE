@@ -26,7 +26,7 @@ $('#tbVendas').DataTable( {
                           {data: 'dh_cadastro'},
                           {
                       "render": function (data, type, row) {
-                          return "<a href='editarQuantidade.php?id=" + row.id_venda + "' class='btn btn-primary'>Alterar</a>"
+                          return "<a href='editarQuantidade.php?id=" + row.id_venda + "' class='btn btn-primary'><i class='fas fa-edit'> Alterar </i></a>"
                       }},
 
                           

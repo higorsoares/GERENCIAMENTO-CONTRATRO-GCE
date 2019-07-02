@@ -25,7 +25,7 @@ $('#tbProdutos').DataTable( {
                           {data: 'nome'},
                           {
                       "render": function (data, type, row) {
-                          return "<a href='editarProduto.php?id=" + row.id_produto + "' class='btn btn-primary'>Alterar Produto</a>"
+                          return "<a href='editarProduto.php?id=" + row.id_produto + "' class='btn btn-primary'><i class='fas fa-edit'> Alterar Produto </i></a>"
                       }},
 
                           
