@@ -62,7 +62,7 @@ $venda = new Vendas();
 
 
 	<div class="row">
-			  <table class="table table-hover" width="100%" id="tbVendas">
+			  <table class="table table-bordered" width="100%" id="tbVendas">
 
 				   		 <thead>
 						      <tr>

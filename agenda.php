@@ -5,7 +5,7 @@ require 'pages/header.php';
 <div class="container">
 	<div class="row">
 		<h1>Agenda De Cobrança</h1>
-	 <table class="table table-hover" width="100%" id="tbAgenda">
+	 <table class="table table-bordered" width="100%" id="tbAgenda">
 
 				   		 <thead>
 
