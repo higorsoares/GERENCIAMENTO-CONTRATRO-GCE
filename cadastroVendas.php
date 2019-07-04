@@ -52,7 +52,8 @@ $venda = new Vendas();
 						<input type="text" class="form-control"  placeholder="Valor Do Frete" id="txtFrete" name="txtFrete">
 					</div>	
 					<div class="form-group col-md-2">
-						<input type="submit" value='Cadastrar' class="btn btn-primary btnn">
+						<!--<input type="submit" value='Cadastrar' class="btn btn-primary btnn">-->
+						<button type="submit" id="btnVenda" class="btn btn-primary btnn"><i class="fa fa-id-card"> Cadastrar  Venda</i></button>
 					</div>		
 				</form>
 

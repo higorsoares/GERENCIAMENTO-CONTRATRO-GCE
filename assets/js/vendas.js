@@ -34,3 +34,43 @@ $('#tbVendas').DataTable( {
 
                  ]
             } );
+
+
+
+
+
+  /*
+      $( "#btnVenda" ).click(function(e) {
+        
+        var txtProdudo = $("#txtProdudo").val();
+        var txtQuantidade = $("#txtQuantidade").val();
+        var txtEmpresa = $("#txtEmpresa").val();
+        var txtFrete = $("#txtFrete").val();
+        
+             $.ajax({
+                url: "tester.php",
+                type: 'POST',
+                data: {txtProdudo:txtProdudo,txtQuantidade:txtQuantidade,txtEmpresa:txtEmpresa,txtFrete:txtFrete},
+                success: function(data) {
+                   Swal.fire(
+                    'Salvo!',
+                    'Click pra confirmar!',
+                    'success'
+                  )
+
+                }
+
+              });
+           
+      });
+
+      
+
+
+*/
+
+
+
+ 
+
+

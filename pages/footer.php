@@ -6,6 +6,7 @@
 <script type="text/javascript" src="assets/datatable/vsf.js"></script>
 <script type="text/javascript" src="assets/datatable/html5.min.js"></script>
 <script type="text/javascript" src="assets/js/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script type="text/javascript" src="assets/js/js.js"></script>
 <script type="text/javascript" src="assets/js/produtos.js"></script>
 <script type="text/javascript" src="assets/js/quantidade.js"></script>

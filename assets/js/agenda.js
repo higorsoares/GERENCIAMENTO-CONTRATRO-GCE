@@ -23,7 +23,7 @@ $('#tbAgenda').DataTable( {
                     {"targets": [2], "visible": true, "width": "7%", "searchable": false, "orderable": false},
                     {"targets": [3], "visible": true, "width": "10%", "searchable": false, "orderable": false,"render" : function(data, type, row){
                             console.log(row.valor_restante);
-                            if (row.valor_restante > 49){
+                            if (row.valor_restante){
                                 return '<span class="label label-danger">'+data+'</span>';
                             } else {
                                 return '<span class="label label-danger">'+data+'</span>';
