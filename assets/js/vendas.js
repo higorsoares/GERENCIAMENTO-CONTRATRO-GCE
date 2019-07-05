@@ -1,8 +1,8 @@
-$('#tbVendas').DataTable( {
+var tbVendas = $('#tbVendas').DataTable( {
                     "responsive": true,
                     "scrollY": "300px",
                     "scrollCollapse": true,
-                    "destroy": true,
+                    //"destroy": true,
                      dom: 'Bfrtip',
                   buttons: [
                           {
@@ -39,10 +39,12 @@ $('#tbVendas').DataTable( {
 
 
 
-  /*
+  
       $( "#btnVenda" ).click(function(e) {
+         e.preventDefault();
         
         var txtProdudo = $("#txtProdudo").val();
+        console.log(txtProdudo);
         var txtQuantidade = $("#txtQuantidade").val();
         var txtEmpresa = $("#txtEmpresa").val();
         var txtFrete = $("#txtFrete").val();
@@ -52,9 +54,13 @@ $('#tbVendas').DataTable( {
                 type: 'POST',
                 data: {txtProdudo:txtProdudo,txtQuantidade:txtQuantidade,txtEmpresa:txtEmpresa,txtFrete:txtFrete},
                 success: function(data) {
+                $("#txtQuantidade").val(" ");
+                  $("#txtEmpresa").val(" ");
+                    $("#txtFrete").val(" ");
+                     tbVendas.ajax.reload(null, false);
                    Swal.fire(
                     'Salvo!',
-                    'Click pra confirmar!',
+                     data,
                     'success'
                   )
 
@@ -67,7 +73,6 @@ $('#tbVendas').DataTable( {
       
 
 
-*/
 
 
 

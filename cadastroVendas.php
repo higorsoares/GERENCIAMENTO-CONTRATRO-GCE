@@ -87,7 +87,7 @@ $venda = new Vendas();
 
 
 <?php
-	
+	/*
 	if(!empty($_POST['txtProdudo'])){
 
 	
@@ -99,6 +99,7 @@ $venda = new Vendas();
 
 		$venda->addVendas($txtProduto,$txtQuantidade,$txtEmpresa,$txtFrete);
 }
+*/
 ?>
 
 
