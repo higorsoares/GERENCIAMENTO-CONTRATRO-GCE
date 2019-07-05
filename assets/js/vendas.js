@@ -50,7 +50,7 @@ var tbVendas = $('#tbVendas').DataTable( {
         var txtFrete = $("#txtFrete").val();
         
              $.ajax({
-                url: "tester.php",
+                url: "addVenda.php",
                 type: 'POST',
                 data: {txtProdudo:txtProdudo,txtQuantidade:txtQuantidade,txtEmpresa:txtEmpresa,txtFrete:txtFrete},
                 success: function(data) {

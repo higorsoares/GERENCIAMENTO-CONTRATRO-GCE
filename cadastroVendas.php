@@ -28,7 +28,7 @@ $venda = new Vendas();
 				<form method="POST" id="formCadastroVendas">
 					<div class="form-group col-md-3">
 					<label for="txtProdudo">Produto</label>
-					<select class="form-control" name="txtProdudo">
+					<select class="form-control" name="txtProdudo" id="txtProdudo">
 						<option>Selecione</option>
 						<?php 
 							$cat = $produto->getProduto();
