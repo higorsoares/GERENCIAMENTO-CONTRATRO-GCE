@@ -53,7 +53,7 @@ $venda = new Vendas();
 					</div>	
 					<div class="form-group col-md-2">
 						<!--<input type="submit" value='Cadastrar' class="btn btn-primary btnn">-->
-						<button type="submit" id="btnVenda" class="btn btn-primary btnn"><i class="fa fa-id-card"> Cadastrar  Venda</i></button>
+						<button type="submit" id="btnVenda" class="btn btn-primary btnn"><i class="fas fa-money-check-alt"> Cadastrar  Venda</i></button>
 					</div>		
 				</form>
 
