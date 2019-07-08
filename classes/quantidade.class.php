@@ -2,8 +2,8 @@
 class Quantidade{
 
 		public function __construct(){
- 		$this->pdo = new PDO("mysql:dbname=contratov3;host=localhost","root","");
-			//$this->pdo = new PDO('mysql:dbname=id4070983_contratov4;host=localhost;','id4070983_igor','itr12909012');
+ 		//$this->pdo = new PDO("mysql:dbname=contratov3;host=localhost","root","");
+			$this->pdo = new PDO('mysql:dbname=id4070983_contratov4;host=localhost;','id4070983_igor','itr12909012');
 			//$this->pdo = new PDO('mysql:dbname=contratov5;host=localhost;','root','');
  	}
 

@@ -55,10 +55,10 @@ $.ajax({
     success: function(data) {
         console.log(data[0].ctrCom);
 
-        $("#contConcluido").html(data[0].ctrCom);
+      
         $("#txtDocEnv").html(data[0].ctrEnv);
         $("#txtDocPen").html(data[0].ctrPend);
-        $("#txtDocFin").html(data[0].ctrFin);
+   
         $("#txtDocPag").html(data[0].ctrPg);
         $("#txtDocAvi").html(data[0].ctrAv);
 
@@ -79,31 +79,33 @@ $('#formPesquisa').on('submit', function(e){
     success: function(data) {
 
         var dataa = typeof data ==='string'? JSON.parse(data):data;
-        console.log(data);
+        console.log(dataa);
         console.log(txtDataInicio);
 
-        $("#contConcluido").html(dataa[0].ctrCom);
+       
         $("#txtDocEnv").html(dataa[0].ctrEnv);
         $("#txtDocPen").html(dataa[0].ctrPend);
-        $("#txtDocFin").html(dataa[0].ctrFin);
+
         $("#txtDocPag").html(dataa[0].ctrPg);
         $("#txtDocAvi").html(dataa[0].ctrAv);
 
 
+        
         var txtDocEnv   = [];
         var txtDocPen   = [];
-        var txtDocFin   = [];
-        var txtDocPag   = [];
+        
 
-        var contConcluido   = [];
-        var txtDocAvi       = [];
+        var txtDocPag   = [];
+        var txtDocAvi   = [];
+
+        
 
         txtDocEnv.push(dataa[0].ctrEnv);
         txtDocPen.push(dataa[0].ctrPend);
-        txtDocFin.push(dataa[0].ctrFin);
+        
         txtDocPag.push(dataa[0].ctrPg);
-        txtDocAvi.push(dataa[0].ctrAv);0
-        contConcluido.push(dataa[0].ctrCom);
+        txtDocAvi.push(dataa[0].ctrAv);
+        
 
 
         var ctx = $('#myChart');
@@ -127,14 +129,6 @@ $('#formPesquisa').on('submit', function(e){
                         hoverBorderColor: 'rgba(200, 200, 200, 1)',
                         data: txtDocPen
                     },{
-                        label: ['Doc Env Financeiro'],
-                        backgroundColor: ["#00CED1"],
-                        borderColor:  'rgba(255,99,132,1)',
-                        hoverBackgroundColor: ["#00CED1"],
-                        hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                        data: txtDocFin
-
-                    },{
                         label: ['Contratos Pagos'],
                         backgroundColor: ["#DAA520"],
                         borderColor:  'rgba(255,99,132,1)',
@@ -148,13 +142,6 @@ $('#formPesquisa').on('submit', function(e){
                         hoverBackgroundColor: ["#E0FFFF"],
                         hoverBorderColor: 'rgba(200, 200, 200, 1)',
                         data: txtDocAvi
-                    },{
-                        label: ['Contratos Comcluidos'],
-                        backgroundColor: ["#00FF7F"],
-                        borderColor:  'rgba(255,99,132,1)',
-                        hoverBackgroundColor: ["#00FF7F"],
-                        hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                        data: contConcluido
                     }
                 ]
             },
@@ -179,15 +166,19 @@ $('#formPesquisa').on('submit', function(e){
 
  $(document).on("change", "#FormCadastroContrato #txtValorMensal", function(){
 
- var ValorTotal = $("#valor").val();
+    var ValorTotal = $("#valor").val();
     var ValorPago  = $("#txtValorMensal").val();
 
     var Result = ValorTotal - ValorPago;
 
     $("#txtRestante").val(Result);
 
-
     console.log("Teste");
 
-
  });
+
+
+
+ $('#valor').mask('000.000.000.000.000.00', {reverse: true});
+ $('#txtValorMensal').mask('000.000.000.000.000.00', {reverse: true});
+ //$('#txtRestante').mask('000.000.000.000.000.00', {reverse: true});

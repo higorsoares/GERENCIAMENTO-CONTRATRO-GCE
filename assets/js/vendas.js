@@ -54,8 +54,8 @@ var tbVendas = $('#tbVendas').DataTable( {
                 type: 'POST',
                 data: {txtProdudo:txtProdudo,txtQuantidade:txtQuantidade,txtEmpresa:txtEmpresa,txtFrete:txtFrete},
                 success: function(data) {
-                $("#txtQuantidade").val(" ");
-                  $("#txtEmpresa").val(" ");
+                   $("#txtQuantidade").val(" ");
+                   $("#txtEmpresa").val(" ");
                     $("#txtFrete").val(" ");
                      tbVendas.ajax.reload(null, false);
                    Swal.fire(
@@ -69,6 +69,10 @@ var tbVendas = $('#tbVendas').DataTable( {
               });
            
       });
+
+      $('#txtFrete').mask('000.000.000.000.000.00', {reverse: true});
+
+
 
       
 

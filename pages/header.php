@@ -43,12 +43,15 @@ session_start();
 			<ul class="nav navbar-nav navbar-right">
 
 				<?php  if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])):?>
-				    <li><a href="agenda.php">Agenda</a></li>
-				    <li><a href="produtos.php">Estoque</a></li>
-                    <li><a href="contratoCadastro.php">Novo Contrato</a></li>
-					<li><a href="meusContratos.php">Meus Contratos</a></li>
+				    <li><a href="produtos.php"><i class="fas fa-cubes"> Estoque </i></a></li>
+				    <?php 
+	   					if($_SESSION['cLogin'] != 5):
+	   				?>
+	   				<li><a href="agenda.php"><i class="fas fa-calendar-minus">  Agenda  </i></a></li>
+                    <li><a href="contratoCadastro.php"> <i class="fas fa-file-signature"> Novo Contrato </i> </a></li>
+					<li><a href="meusContratos.php"><i class="fas fa-id-badge"> Meus Contratos </i></a></li>
 					
-
+					<?php endif;?>
 					<!--<li><a href="meusContratos.php">Meus Contratos</a></li>-->
 
 				    <li><a href="sair.php">Sair</a></li>
