@@ -13,5 +13,6 @@
 <script type="text/javascript" src="assets/js/quantidade.js"></script>
 <script type="text/javascript" src="assets/js/vendas.js"></script>
 <script type="text/javascript" src="assets/js/agenda.js"></script>
+<script type="text/javascript" src="assets/js/pedidos.js"></script>
 </body>
 </html>

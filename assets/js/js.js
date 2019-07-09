@@ -168,6 +168,10 @@ $('#formPesquisa').on('submit', function(e){
 
     var ValorTotal = $("#valor").val();
     var ValorPago  = $("#txtValorMensal").val();
+    $('#valor').mask('000.000.000.000.000.00', {reverse: true});
+    $('#txtValorMensal').mask('000.000.000.000.000.00', {reverse: true});
+ //$('#txtRestante').mask('000.000.000.000.000.00', {reverse: true});
+
 
     var Result = ValorTotal - ValorPago;
 

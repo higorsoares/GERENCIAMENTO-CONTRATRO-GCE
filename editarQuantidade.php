@@ -60,8 +60,8 @@ if(!empty($_POST['txtQuantidade'])){
 	$txtQuantidade = $_POST['txtQuantidade'];
 	$txtValorProduto = $_POST['txtValorProduto'];
 
-	$quantidade->AltQuantidade($txtIdQuantidade,$txtQuantidade, $txtValorProduto);
-	echo "Quantidade Alterada";
+	$rxr = $quantidade->AltQuantidade($txtIdQuantidade,$txtQuantidade, $txtValorProduto);
+	echo $rxr;
 }
 
 

@@ -2,19 +2,21 @@
 class Quantidade{
 
 		public function __construct(){
+		//$this->pdo = new	PDO('mysql:dbname=id4070983_contratov4;host=localhost;','id4070983_igor','itr12909012');
+			$this->pdo = new PDO('mysql:dbname=contratov3;host=localhost;','root','');
  		//$this->pdo = new PDO("mysql:dbname=contratov3;host=localhost","root","");
-			$this->pdo = new PDO('mysql:dbname=id4070983_contratov4;host=localhost;','id4070983_igor','itr12909012');
+			//$this->pdo = new 
 			//$this->pdo = new PDO('mysql:dbname=contratov5;host=localhost;','root','');
  	}
 
 
- 	public function addQuantidade($id_produtos,$quantidade,$valor_produto){
+ 	public function addQuantidade($id_produtos,$quantidade){
 
- 		$sql = "INSERT INTO quantidade SET  id_produtos = :id_produtos, quantidade = :quantidade , valor_produto = :valor_produto , id_user = :id_user";
+ 		$sql = "INSERT INTO quantidade SET  id_produtos = :id_produtos, quantidade = :quantidade , id_user = :id_user";
  		$sql = $this->pdo->prepare($sql);
  		$sql->bindValue(":id_produtos",$id_produtos);
  		$sql->bindValue(":quantidade",$quantidade);
- 		$sql->bindValue(":valor_produto",$valor_produto);
+ 		
  		$sql->bindValue(":id_user",$_SESSION['cLogin']);
  		$sql->execute();
 
@@ -57,7 +59,7 @@ class Quantidade{
 
 
 
- 	public function AltQuantidade($txtIdquantidade,$txtQuantidade,$txtValor){
+ 	public function AltQuantidade($txtIdquantidade,$txtQuantidade ){
 
  		
 
@@ -69,30 +71,46 @@ class Quantidade{
  		if($sql->rowCount() > 0){
  			$dado = $sql->fetch();
 
- 			$ret = ($dado['quantidade'] + $txtQuantidade);
+ 			$ret = ($dado['quantidade'] + $txtQuantidade );
 
  			$sql2 = "UPDATE quantidade SET quantidade = :quantidade WHERE idQtd = :idQtd";
  			$sql2 = $this->pdo->prepare($sql2);
  			$sql2->bindValue(":quantidade",$ret);
  			$sql2->bindValue(":idQtd",$txtIdquantidade);
  			$sql2->execute();
-
  		}
 
+}
 
 
+public function produtoDefeito($txtIdquantidade,$txtProdutoDefeito){
 
+ 		
+
+ 		$sql = "SELECT * FROM quantidade WHERE idQtd = :idQtd ";
+ 		$sql = $this->pdo->prepare($sql);
+ 		$sql->bindValue(":idQtd",$txtIdquantidade);
+ 		$sql->execute();
+
+ 		if($sql->rowCount() > 0){
+ 			$dado = $sql->fetch();
+
+ 			$ret = ($dado['quantidade'] - $txtProdutoDefeito );
+ 			$ret2 = ($dado['valor_produto'] + $txtProdutoDefeito );
+
+ 			$sql2 = "UPDATE quantidade SET quantidade = :quantidade, valor_produto = :valor_produto WHERE idQtd = :idQtd";
+ 			$sql2 = $this->pdo->prepare($sql2);
+ 			$sql2->bindValue(":quantidade",$ret);
+ 			$sql2->bindValue(":valor_produto",$ret2);
+ 			$sql2->bindValue(":idQtd",$txtIdquantidade);
+ 			$sql2->execute();
+
+ 			echo "Produtos com defeitos adicionados";
+ 		}else{
+ 			echo "Ouve um Erro";
+ 		}
 
  	}
 
 
-
-
-
-
-
-
-
-
-
-}
+ }

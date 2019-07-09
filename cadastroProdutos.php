@@ -10,8 +10,9 @@ $produto = new Produtos();
 	<div class="row">
 		<nav aria-label="breadcrumb">
 		   <ol class="breadcrumb">
-		   		<li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
-		    	<li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
+		   		<li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
+	   			<li class="breadcrumb-item"><a class="btn btn-info" href="cadastroPedidos.php">Pedidos</a></li>
+		    	<li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
 		    	<li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
 		   </ol>
 		</nav>

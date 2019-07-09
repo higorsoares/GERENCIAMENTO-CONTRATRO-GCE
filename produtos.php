@@ -12,11 +12,10 @@ $quantidade = new Quantidade();
 <div class="container">
 	<nav aria-label="breadcrumb">
 	   <ol class="breadcrumb">
-	   	
-	   	  <li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
-		  <li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
-		
-		  <li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
+	   			<li class="breadcrumb-item"><a class="btn btn-warning" href="cadastroProdutos.php">Cadastro De produtos</a></li>
+	   			<li class="breadcrumb-item"><a class="btn btn-info" href="cadastroPedidos.php">Pedidos</a></li>
+		    	<li class="breadcrumb-item"><a class="btn btn-primary" href="produtos.php">Estoque</a></li>
+		    	<li class="breadcrumb-item"><a class="btn btn-success" href="cadastroVendas.php">Realizar Vendas</a></li>
 	   </ol>
 	</nav>
 	<h1>Quantidade Em Estoque</h1>
@@ -41,11 +40,14 @@ $quantidade = new Quantidade();
 					<div class="form-group col-md-3">
 						<label for="txtQuantidade">Quantidade:</label>
 						<input type="number" placeholder="Quantidade" class="form-control" id="txtQuantidade" name="txtQuantidade">
+				
 					</div>	
-						<div class="form-group col-md-3">
+					<!--
+					<div class="form-group col-md-3">
 						<label for="txtValorProduto">Valor Do produto :</label>
 						<input type="number" placeholder="Valor Do Produto" class="form-control" id="txtValorProduto" name="txtValorProduto">
 					</div>	
+						-->
 					<div class="form-group col-md-2">
 						<input type="submit" value='Cadastrar' class="btn btn-primary btnn">
 					</div>		
@@ -62,12 +64,10 @@ $quantidade = new Quantidade();
 						      <tr>
 						        <th>Nome do Produto</th>
 						        <th>Quantidade</th>
-						         <th>Valor</th>
+						         <th>Eqpt Defeitos</th>
 						        <th>Usuário Cadastro</th>
-						        
-						        <th>ações</th>
-
-						         
+						        <th>AddQuantidade</th>
+						        <th>AddEqpt Defeitos</th>
 						      </tr>
 				   		 </thead>
 				    <tbody>
@@ -86,9 +86,9 @@ if(!empty($_POST['txtProdudo'])){
 
 	$txtProdudo = addslashes($_POST['txtProdudo']);
 	$txtQuantidade = addslashes($_POST['txtQuantidade']);
-	$txtValorProduto = addslashes($_POST['txtValorProduto']);
+	
 
-	$quantidade->addQuantidade($txtProdudo,$txtQuantidade,$txtValorProduto);
+	$quantidade->addQuantidade($txtProdudo,$txtQuantidade);
 }
 
 ?>
